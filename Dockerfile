@@ -1,6 +1,6 @@
 FROM centos:7
 
-RUN dnf upgrade-minimal --assumeyes \
-    && dnf install --assumeyes --setopt=install_weak_deps=False wget \
+RUN yum update-minimal -y \
+    && yum install -y wget \
     && update-ca-trust \
-    && dnf clean all
+    && yum clean expire-cache
